@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Name into Sorted Array</title>
+</head>
+<body>
+    <script>
+        // Initial array of names in alphabetical order
+        let names = ['Alice', 'Bob', 'Charlie', 'David', 'Emily'];
+
+        // Function to prompt user for a new name and insert it into the sorted array
+        function insertName() {
+            // Prompt user for a new name
+            let newName = prompt("Enter a new name:");
+
+            // If user cancels or enters an empty string, do nothing
+            if (!newName || newName.trim() === "") {
+                return;
+            }
+
+            // Convert the new name to title case
+            newName = newName.charAt(0).toUpperCase() + newName.slice(1);
+
+            // Insert the new name into the sorted array
+            let index = 0;
+            while (index < names.length && newName > names[index]) {
+                index++;
+            }
+            names.splice(index, 0, newName);
+
+            // Display the sorted array of names
+            alert("Updated list of names: " + names.join(', '));
+        }
+
+        // Call the function to prompt for a new name and insert it into the sorted array
+        insertName();
+    </script>
+</body>
+</html>
