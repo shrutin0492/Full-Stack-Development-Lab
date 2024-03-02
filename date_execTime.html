@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time Display</title>
+</head>
+<body>
+    <div id="dateInfo">
+        <!-- Date information will be displayed here -->
+    </div>
+    <div id="timeTaken">
+        <!-- Time taken for the execution of the for loop will be displayed here -->
+    </div>
+
+    <script>
+        // Fetching and displaying various parts of the date using Date object
+        let currentDate = new Date();
+        let year = currentDate.getFullYear();
+        let month = currentDate.getMonth() + 1; // Month starts from 0
+        let day = currentDate.getDate();
+        let hours = currentDate.getHours();
+        let minutes = currentDate.getMinutes();
+        let seconds = currentDate.getSeconds();
+
+        let dateInfo = document.getElementById('dateInfo');
+        dateInfo.innerHTML = `
+            <p>Current Date: ${currentDate}</p>
+            <p>Year: ${year}</p>
+            <p>Month: ${month}</p>
+            <p>Day: ${day}</p>
+            <p>Hours: ${hours}</p>
+            <p>Minutes: ${minutes}</p>
+            <p>Seconds: ${seconds}</p>
+        `;
+
+        // Measuring the time taken for execution of a simple for loop
+        let startTime = new Date().getTime();
+
+        for (let i = 0; i < 1000000; i++) {
+            // Do nothing, just loop
+        }
+
+        let endTime = new Date().getTime();
+        let timeTaken = endTime - startTime;
+
+        let timeTakenElement = document.getElementById('timeTaken');
+        timeTakenElement.innerHTML = `
+            <p>Time taken for execution of for loop (milliseconds): ${timeTaken}</p>
+        `;
+    </script>
+</body>
+</html>
+
+
