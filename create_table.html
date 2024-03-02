@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Table with User-defined Border</title>
+</head>
+<body>
+    <script>
+        // Prompt the user to enter a border value
+        let border = prompt("Enter the border value for the table:");
+
+        // Parse the input as an integer
+        border = parseInt(border);
+
+        // Create the table element
+        let table = document.createElement('table');
+
+        // Define table styles
+        table.style.borderCollapse = 'collapse';
+
+        // Create five rows in the table
+        for (let i = 0; i < 5; i++) {
+            let row = document.createElement('tr');
+
+            // Create five data cells in each row
+            for (let j = 0; j < 5; j++) {
+                let cell = document.createElement('td');
+                cell.textContent = `Row ${i + 1}, Column ${j + 1}`;
+                cell.style.border = `${border}px solid black`; // Apply the user-defined border
+                row.appendChild(cell);
+            }
+
+            // Append the row to the table
+            table.appendChild(row);
+        }
+
+        // Append the table to the document body
+        document.body.appendChild(table);
+    </script>
+</body>
+</html>
