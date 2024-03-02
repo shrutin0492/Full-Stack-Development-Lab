@@ -1,0 +1,14 @@
+/* Define style for paragraphs with class p1 */
+.p1 {
+    margin: 0.1in;
+    padding: 0.5in;
+    background-color: pink;
+    border: 1px dotted black;
+}
+
+/* Define style for paragraphs with class p2 */
+.p2 {
+    margin: 0.5in;
+    padding: 0.1in;
+    background-color: green;
+}
