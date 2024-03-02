@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mobile Phone Estimator</title>
+</head>
+<body>
+  <script>
+    class mobiles {
+      constructor(s_size, ram, company, proc) {
+        this.s_size = s_size;
+        this.ram = ram;
+        this.company = company;
+        this.proc = proc;
+      }
+
+      estimator() {
+        var ecost;
+
+        if (this.company.toLowerCase() == 'samsung' || this.company.toLowerCase() == 'moto' ||
+            this.company.toLowerCase() == 'lenovo' || this.company.toLowerCase() == 'nokia') {
+          if (this.company.toLowerCase() == 'samsung') {
+            ecost = 7000 * (this.s_size / 4) + 7000 * (this.ram) + 7000 * this.proc + 0.05 * 7000;
+          } else if (this.company.toLowerCase() == 'moto') {
+            ecost = 5999 * (this.s_size / 4) + 5999 * (this.ram) + 5999 * this.proc + 0.05 * 5999;
+          } else if (this.company.toLowerCase() == 'lenovo') {
+            ecost = 4000 * (this.s_size / 4) + 4000 * (this.ram) + 4000 * this.proc + 0.05 * 4000;
+          } else if (this.company.toLowerCase() == 'nokia') {
+            ecost = 6100 * (this.s_size / 4) + 6100 * (this.ram) + 6100 * this.proc + 0.05 * 6100;
+          }
+          document.write('The estimated cost of your ' + this.company + ' phone is around: ' + String(parseInt(ecost)));
+        } else {
+          document.write('Specified company not available in our catalog');
+        }
+      }
+    }
+
+    var scr = parseFloat(prompt('Enter screen size (inches): '));
+    var ram = parseFloat(prompt('Enter RAM (GB): '));
+    var com = String(prompt('Enter company name: '));
+    var pro = parseFloat(prompt('Enter processor speed (GHz): '));
+
+    var k = new mobiles(scr, ram, com, pro);
+    k.estimator();
+  </script>
+</body>
+</html>
